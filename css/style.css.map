@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": ";AAAA;;EAEE;AAEF;;;;;;;;;;;;;;;gEAegE;AAEhE;;iEAEiE;AAEjE;;iEAEiE;AAEjE;;mEAEmE",
+    "sources": [
+        "../sass/style.scss",
+        "../sass/_variables.scss",
+        "../sass/_layout.scss",
+        "../sass/_menu.scss",
+        "../sass/_slider.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
