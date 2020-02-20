@@ -5,6 +5,16 @@ body {
         font-family: 'Source Code Pro', monospace;
         color: white;
         font-weight: 100;
+        font-size: 150%;
+    }
+
+    .redText{
+        color: $accentRed;
+    }
+
+    .header{
+        border: 1px solid white;
+        margin: 1%;
     }
     
 }
