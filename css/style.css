@@ -19,6 +19,9 @@ Auteur: Emile Jutras
 # Variables
 --------------------------------------------------------------*/
 /* ------------------------------------------------------------
+# Mixin
+--------------------------------------------------------------*/
+/* ------------------------------------------------------------
 # Layout
 -------------------------------------------------------------- */
 body {
@@ -40,28 +43,212 @@ body .redText {
 body .header {
   border: 1px solid white;
   margin: 1%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-body .header img {
-  height: 10%;
-  width: 10%;
-  margin: auto;
-  margin-right: 7%;
+  position: absolute;
+  top: 0;
+  width: 98%;
+  text-align: left;
 }
 
 /* ------------------------------------------------------------
 # Menu
 -------------------------------------------------------------- */
+body {
+  background-color: #d21404;
+  font-family: 'Source Code Pro', monospace;
+  text-align: center;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.container {
+  background-color: #1d1d1d;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.3);
+  -webkit-transform: scale(1);
+}
+
+.menu-trigger, .close-trigger {
+  position: absolute;
+  top: 30%;
+  right: 3%;
+  display: block;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 333;
+}
+
+.menu-trigger:hover .menu-trigger-bar:before, .close-trigger:hover .menu-trigger-bar:before {
+  width: 100%;
+}
+
+.menu-trigger:hover .close-trigger-bar:before, .close-trigger:hover .close-trigger-bar:before {
+  width: 100%;
+}
+
+.close-trigger {
+  z-index: 5;
+  top: 50%;
+}
+
+.menu-trigger-bar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  margin-bottom: 6px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: relative;
+}
+
+.menu-trigger-bar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.menu-trigger-bar.top {
+  width: 50%;
+}
+
+.menu-trigger-bar.middle:before {
+  left: auto;
+  right: 0;
+}
+
+.menu-trigger-bar.bottom {
+  width: 50%;
+  margin-left: 50%;
+}
+
+.close-trigger-bar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #1d1d1d;
+  position: relative;
+}
+
+.close-trigger-bar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.close-trigger-bar.left {
+  -webkit-transform: translateX(100px) translateY(-100px) rotate(-45deg);
+          transform: translateX(100px) translateY(-100px) rotate(-45deg);
+}
+
+.close-trigger-bar.right {
+  -webkit-transform: translateX(-100px) translateY(-100px) rotate(45deg);
+          transform: translateX(-100px) translateY(-100px) rotate(45deg);
+  top: -3px;
+}
+
+.inner-container, .menu-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.inner-container {
+  z-index: 20;
+}
+
+.menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu {
+  display: block;
+  width: 100%;
+  padding: 20%;
+}
+
+.menu li {
+  text-align: left;
+  display: block;
+  padding: 15px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #1d1d1d;
+  display: inline-block;
+  padding: 10px 0;
+  position: relative;
+}
+
+.menu a:hover:before {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.menu a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 18px;
+  height: 4px;
+  opacity: 0;
+  background-color: #1d1d1d;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.menu-bg {
+  position: absolute;
+  display: block;
+  width: 200%;
+  left: -53%;
+  top: -25%;
+  height: 40%;
+  background-color: white;
+}
+
+.menu-bg.middle {
+  top: 29%;
+  left: -53%;
+  -webkit-transform: rotate(45deg) scaleY(0) scaleX(3);
+          transform: rotate(45deg) scaleY(0) scaleX(3);
+}
+
 /* --------------------------------------------------------------
 # Slider 
 ---------------------------------------------------------------- */

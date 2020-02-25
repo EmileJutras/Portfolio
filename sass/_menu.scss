@@ -1,0 +1,192 @@
+
+body {
+  background-color: $accentRed;
+  font-family: 'Source Code Pro', monospace;
+  text-align: center;
+  height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+//
+.container {
+  background-color: $backgroundBlack;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 9px 13px 0px $black-30;
+-moz-box-shadow: 0px 9px 13px 0px $black-30;
+box-shadow: 0px 9px 13px 0px $black-30;
+  -webkit-transform: scale(1);
+}
+
+.menu-trigger, .close-trigger {
+  position: absolute;
+  top: 30%;
+  right: 3%;
+  display: block;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 333;
+  
+  &:hover {
+    .menu-trigger-bar {
+      &:before {
+        width: 100%;
+      }
+    }
+    
+    .close-trigger-bar {
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.close-trigger {
+  z-index: 5;
+  top: 50%;
+}
+
+.menu-trigger-bar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: $white-100;
+  margin-bottom: 6px;
+  transform: rotate(-45deg);
+  position: relative;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: $black-20;
+    transition: $slide;
+  }
+  
+  &.top {
+    width: 50%;
+  }
+  &.middle {
+    &:before {
+      left: auto;
+      right: 0;
+    }
+  }
+  &.bottom {
+    width: 50%;
+    margin-left: 50%;
+  }
+}
+
+.close-trigger-bar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: $backgroundBlack;
+  position: relative;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: $white-20;
+    transition: $slide;
+  }
+  
+  &.left {
+    transform: translateX(100px) translateY(-100px) rotate(-45deg);
+  }
+  &.right {
+    transform: translateX(-100px) translateY(-100px) rotate(45deg);
+    top: -3px;
+  }
+}
+
+.inner-container, .menu-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.inner-container {
+  z-index: 20;
+}
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+.menu {
+  display: block;
+  width: 100%;
+  padding: 20%;
+  
+  li {
+    text-align: left;
+    display: block;
+    padding: 15px 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: $backgroundBlack;
+    display: inline-block;
+    padding: 10px 0;
+    position: relative;
+    
+    &:hover {
+      &:before {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+    
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 18px;
+      height: 4px;
+      opacity: 0;
+      background-color: $backgroundBlack;
+      transform: translateX(100px);
+      transition: $slide;
+    }
+  }
+}
+
+.menu-bg {
+  position: absolute;
+  display: block;
+  width: 200%;
+  left: -53%;
+  top: -25%;
+  //top: -25%;
+  height: 40%;
+  background-color: $white-100;
+  
+  &.middle {
+    top: 29%;
+    left: -53%;
+    transform: rotate(45deg) scaleY(0) scaleX(3);
+  }
+}
