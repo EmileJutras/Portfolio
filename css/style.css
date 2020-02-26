@@ -169,9 +169,12 @@ html {
   top: -3px;
 }
 
+.container {
+  position: relative;
+}
+
 .inner-container, .menu-container {
   position: absolute;
-  height: 100%;
   width: 100%;
   left: 0;
   top: 0;
@@ -179,6 +182,7 @@ html {
 
 .inner-container {
   z-index: 20;
+  height: 0%;
 }
 
 .menu-container {
@@ -188,6 +192,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
 }
 
 .menu {
@@ -252,4 +257,28 @@ html {
 /* --------------------------------------------------------------
 # Slider 
 ---------------------------------------------------------------- */
+.containerSlider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  margin: 50% 0%;
+  position: relative;
+  width: 100%;
+}
+
+.containerSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 90%;
+  height: 20rem;
+  border: 2px solid white;
+  margin: 4.5%;
+  position: relative;
+}
 /*# sourceMappingURL=style.css.map */

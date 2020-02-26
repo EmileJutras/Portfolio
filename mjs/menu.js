@@ -11,6 +11,7 @@ var closeTriggerRight = closeTrigger.find('.close-trigger-bar.right');
 
 //MENU
 var menuContainer = $('.menu-container');
+var innerContainer = $('.inner-container');
 var menu = $('.menu');
 var menuTop = $('.menu-bg.top');
 var menuMiddle = $('.menu-bg.middle');
@@ -31,6 +32,7 @@ tlOpen.add("preOpen")
   x: "+=80px", y: "-=80px", ease: Power4.easeIn,
   onComplete: function() {
     openTrigger.css('visibility','hidden');
+    innerContainer[0].style.height = "100%";
   }
 }, "preOpen")
 .to(openTriggerBottom, 0.4, {
@@ -93,6 +95,7 @@ tlClose.add("close")
   y: "23%",
   ease: Power4.easeInOut,
   onComplete: function() {
+    innerContainer[0].style.height = "0%";
     menuTop.css('background-color','#ffffff');
     menuMiddle.css('background-color','#ffffff');
     menuBottom.css('background-color','#ffffff');
