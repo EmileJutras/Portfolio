@@ -58,7 +58,7 @@ box-shadow: 0px 9px 13px 0px $black-30;
   display: block;
   width: 100%;
   height: 4px;
-  background-color: $white-100;
+  background-color: $white;
   margin-bottom: 6px;
   transform: rotate(-45deg);
   position: relative;
@@ -71,7 +71,7 @@ box-shadow: 0px 9px 13px 0px $black-30;
     display: block;
     width: 0%;
     height: 100%;
-    background-color: $black-20;
+    background-color: $accentRed;
     transition: $slide;
   }
   
@@ -105,7 +105,7 @@ box-shadow: 0px 9px 13px 0px $black-30;
     display: block;
     width: 0%;
     height: 100%;
-    background-color: $white-20;
+    background-color: grey;
     transition: $slide;
   }
   
@@ -157,9 +157,11 @@ box-shadow: 0px 9px 13px 0px $black-30;
     position: relative;
     
     &:hover {
+
+      color: $accentRed;
       &:before {
         opacity: 1;
-        transform: translateX(0px);
+        transform: translateX(0);
       }
     }
     
@@ -169,11 +171,11 @@ box-shadow: 0px 9px 13px 0px $black-30;
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 18px;
+      width: 100%;
       height: 4px;
       opacity: 0;
-      background-color: $backgroundBlack;
-      transform: translateX(100px);
+      background-color: $accentRed;
+      transform: translateX(-100%);
       transition: $slide;
     }
   }
@@ -187,7 +189,7 @@ box-shadow: 0px 9px 13px 0px $black-30;
   top: -25%;
   //top: -25%;
   height: 40%;
-  background-color: $white-100;
+  background-color: $white;
   
   &.middle {
     top: 29%;

@@ -1,3 +1,16 @@
+var boutonsMenu = document.querySelectorAll('a');
+
+for (i=0; i<boutonsMenu.length; i++){
+  boutonsMenu[i].addEventListener("click", function(){
+    if(tlClose.progress() < 1){
+    tlClose.play();
+} else {
+    tlClose.restart();
+}
+});
+}
+
+
 //OPEN TRIGGER
 var openTrigger = $('.menu-trigger');
 var openTriggerTop = openTrigger.find('.menu-trigger-bar.top');

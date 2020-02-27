@@ -1,9 +1,10 @@
 .containerSlider {
     display: flex;
     overflow: auto;
-    margin: 50% 0%;
-    position: relative;  
-    width: 100%; 
+    margin: 15vh 5vw 25vh 0vw;
+    position: absolute;  
+    width: 100vw;
+    scroll-snap-type: x mandatory;
 
     &::-webkit-scrollbar {
         display: none;
@@ -11,10 +12,23 @@
 }
 
 .slide {
+    scroll-snap-align: center;
     flex: 0 0 auto;
-    width: 90%;
-    height: 20rem;
+    width: 90vw;
+    height: 80vh;
     border: 2px solid white;
-    margin: 4.5%;
+    margin: 0vh 50vw 0vh 50vw;
     position: relative;
+    scroll-behavior: smooth;
+}
+
+.accueil {
+    margin-left: 5vw;
+}
+
+.contact::after {
+    content: "";
+    position: absolute;
+    width: 50vw;
+    margin: 5vw;
 }

@@ -1,20 +1,9 @@
-var containerSlider = document.querySelectorAll('.slide');
+var containerSlider = document.querySelector('.containerSlider');
+console.log(containerSlider);
 
-window.addEventListener('wheel' , function(e){
-    if(e.deltaY < 0){
-        console.log("up");
-        for(i = 0; i< containerSlider.length; i++){
-            TweenMax.to(containerSlider, 0.5, {
-                left: "+=50"
-            });
-        }  
-    }
-    else{
-        console.log("down");
-        for(i = 0; i< containerSlider.length; i++){
-            TweenMax.to(containerSlider, 0.5, {
-                left: "-=50"
-            });
-        }
-    }
-})
+
+
+window.addEventListener('wheel', function(){
+    console.log("wheel");
+    containerSlider.scrollBy(200, 0);
+});
