@@ -300,4 +300,11 @@ html {
   width: 50vw;
   margin: 5vw;
 }
+
+@media screen and (min-width: 800px) {
+  .containerSlider {
+    -ms-scroll-snap-type: none;
+        scroll-snap-type: none;
+  }
+}
 /*# sourceMappingURL=style.css.map */
