@@ -1,4 +1,4 @@
-function SmoothScroll(target, speed, smooth) {
+/*function SmoothScroll(target, speed, smooth) {
 	if (target === document)
 		target = (document.scrollingElement 
               || document.documentElement 
@@ -74,4 +74,4 @@ var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 
 console.log(width);
 if(width >= 800){
 	SmoothScroll(target, 200, 25);
-}
+}*/
