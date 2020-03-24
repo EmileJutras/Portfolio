@@ -1,15 +1,10 @@
-.containerSlider {
-    display: flex;
-    overflow: auto;
-    margin: 15vh 5vw 25vh 0vw;
-    position: absolute;  
-    width: 100vw;
-    scroll-snap-type: x mandatory;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
+.glider-contain {
+    margin-top: 13vh;
 }
+
+.draggable::-webkit-scrollbar {
+    display: none;
+  }
 
 .section {
     scroll-snap-align: center;
@@ -17,25 +12,41 @@
     width: 90vw;
     height: 80vh;
     border: 2px solid white;
-    margin: 0vh 50vw 0vh 50vw;
-    position: relative;
-    scroll-behavior: smooth;
+    //margin: 0vh 10vw;
 }
 
-.accueil {
-    margin-left: 5vw;
-}
+.arrow {
+	position: absolute;
+	top: 50%;
+	width: 3vmin;
+	height: 3vmin;
+	background: transparent;
+	border-top: .5vmin solid white;
+	border-right: .5vmin solid white;
+	box-shadow: 0 0 0 lightgray;
+	transition: all 200ms ease;
+	
+	&.left {
+		left: 0;
+		transform: translate3d(0,-50%,0) rotate(-135deg);
+	}
 
-.contact::after {
-    content: "";
-    position: absolute;
-    width: 50vw;
-    margin: 5vw;
-}
-
-@media screen and (min-width: 800px){
-
-    .containerSlider{
-        scroll-snap-type: none;
-    }
+	&.right {
+		right: 0;
+		transform: translate3d(0,-50%,0) rotate(45deg);
+	}
+	
+	&:hover {
+		border-color: $accentRed;
+	}
+	
+	&:before { // for better hit area
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-40%,-60%) rotate(45deg);
+		width: 200%;
+		height: 200%;
+	}
 }

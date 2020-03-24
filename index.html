@@ -7,6 +7,7 @@
     <title>Emile Jutras</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/glider.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="mjs/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.0/gsap.min.js"></script>
@@ -46,34 +47,45 @@
             </div>
         </div>
 
-        <div class="containerSlider" id='containerSlider'>
-            <div class="section accueil" id="accueil">
+        <div class="glider-contain multiple" id='glider-contain multiple'>
+            <button class="glider-prev">
+                <i class="arrow left"></i>
+            </button>
+            <div class="glider">
+                <div class="section accueil" id="accueil">
 
+                </div>
+                <div class="section apropos" id="apropos">
+    
+                </div>
+                <div class="section projet1" id="projet1">
+    
+                </div>
+                <div class="section projet2" id="projet2">
+    
+                </div>
+                <div class="section projet3" id="projet3">
+    
+                </div>
+                <div class="section projet4" id="projet4">
+    
+                </div>
+                <div class="section projet5" id="projet5">
+    
+                </div>
+                <div class="section projet6" id="projet6">
+    
+                </div>
+                <div class="section contact" id="contact">
+                    
+                </div>
             </div>
-            <div class="section apropos" id="apropos">
+            
+            <button class="glider-next">
+                <i class="arrow right"></i>
+            </button>
 
-            </div>
-            <div class="section projet1" id="projet1">
-
-            </div>
-            <div class="section projet2" id="projet2">
-
-            </div>
-            <div class="section projet3" id="projet3">
-
-            </div>
-            <div class="section projet4" id="projet4">
-
-            </div>
-            <div class="section projet5" id="projet5">
-
-            </div>
-            <div class="section projet6" id="projet6">
-
-            </div>
-            <div class="section contact" id="contact">
-                
-            </div>
+            <div id="dots" class="glider-dots"></div>
         </div>
         
     </div>
@@ -81,4 +93,16 @@
 </body>
 <script language="JavaScript" type="text/javascript" src="mjs/menu.js" ></script>
 <script type="text/javascript" src="mjs/glider.js"></script>
+<script>
+    new Glider(document.querySelector('.glider'), {
+        slidesToShow: 1,
+        draggable: true,
+        scrollLock: true,
+        dots: '#dots',
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        }
+    });
+</script>
 </html>

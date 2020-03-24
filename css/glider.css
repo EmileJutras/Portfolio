@@ -13,11 +13,12 @@
   }
   .glider-track {
     transform: translateZ(0);
-    width: 100%;
+    width: 00%;
     margin: 0;
     padding: 0;
     display: flex;
     z-index: 1;
+    justify-content: space-around;
   }
   .glider.draggable {
     user-select: none;
@@ -46,6 +47,7 @@
     height: 0;
   }
   .glider-prev,.glider-next {
+    display: none;
     user-select: none;
     position: absolute;
     outline: none;
@@ -54,30 +56,30 @@
     z-index: 2;
     font-size: 40px;
     text-decoration: none;
-    left: -23px;
     border: 0;
-    top: 30%;
+    top: 40%;
     cursor: pointer;
-    color: #666;
+    color: white;
     opacity: 1;
     line-height: 1;
     transition: opacity .5s cubic-bezier(.17,.67,.83,.67),
                 color .5s cubic-bezier(.17,.67,.83,.67);
   }
   .glider-prev:hover,
-  .glider-next:hover,
-  .glider-prev:focus,
-  .glider-next:focus {
-    color: #a89cc8;
+  .glider-next:hover {
+    color: #d21404;
   }
   .glider-next {
-    right: -23px;
+    right: 1.5vw;
     left: auto;
+  }
+  .glider-prev {
+    left: 1.5vw;
+    right: auto;
   }
   .glider-next.disabled,
   .glider-prev.disabled {
-    opacity: .25;
-    color: #666;
+    opacity: 0;
     cursor: default;
   }
   .glider-slide {
@@ -102,17 +104,18 @@
     outline: none;
     display: block;
     cursor: pointer;
-    color: #ccc;
-    border-radius: 999px;
-    background: #ccc;
-    width: 12px;
-    height: 12px;
-    margin: 7px;
+    color: white;
+    background: white;
+    width: 8vw;
+    height: .5vh;
+    margin: 2vh 0vw;
+    transition: all .2s ease-in-out;
   }
   .glider-dot:hover,
   .glider-dot:focus,
   .glider-dot.active {
-    background: #a89cc8;
+    height: 1.5vh;
+    background-color: #d21404;
   }
   @media(max-width: 36em){
     .glider::-webkit-scrollbar {

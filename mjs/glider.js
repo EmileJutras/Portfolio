@@ -124,10 +124,10 @@
   
       // set slide dimensions
       [].forEach.call(_.slides, function (__) {
-        __.style.height = 'auto'
-        __.style.width = _.itemWidth + 'px'
+        //__.style.height = 'auto'
+        //__.style.width = _.itemWidth + 'px'
         width += _.itemWidth
-        height = Math.max(__.offsetHeight, height)
+        //height = Math.max(__.offsetHeight, height)
       })
   
       _.track.style.width = width + 'px'
@@ -532,97 +532,4 @@
     }
   
     return Glider
-  })
-
-
-
-
-
-
-
-///NON FONCTIONNEL
-
-  /*(function($) {
-    var selector = ".section";
-  
-    var $slides = $(selector);
-    console.log($slides);
-  
-    var currentSlide = 0;
-    var isAnimating = false;
-  
-    var stopAnimation = function() {
-      setTimeout(function() {
-        isAnimating = false;
-      }, 300);
-    };
-  
-    var bottomIsReached = function($elem) {
-      var rect = $elem[0].getBoundingClientRect();
-      return rect.right = $(window).width()/20;
-    };
-  
-    var topIsReached = function($elem) {
-      var rect = $elem[0].getBoundingClientRect();
-      return rect.left = $(window).width()/20;
-    };
-  
-    document.addEventListener(
-      "wheel",
-      function(event) {
-        var $currentSlide = $($slides[currentSlide]);
-        if (isAnimating) {
-          event.preventDefault();
-          return;
-        }
-  
-        var direction = -event.deltaY;
-  
-        if (direction < 0) {
-          // next
-          if (currentSlide + 1 >= $slides.length) return;
-          if (!bottomIsReached($currentSlide)) return;
-          console.log('do');
-          event.preventDefault();
-          currentSlide++;
-          var $slide = $($slides[currentSlide]);
-          console.log($slide);
-          var vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-          var offsetLeft = $slide.offset().left - vw/20;
-          console.log(offsetLeft);
-          isAnimating = true;
-          $(".containerSlider").animate(
-            {
-              scrollLeft: offsetLeft
-            },
-            1000,
-            stopAnimation
-          );
-        } else {
-          // back
-          if (currentSlide - 1 < 0) return;
-          console.log('hey');
-          if (!topIsReached($currentSlide)) return;
-          console.log('do');
-          event.preventDefault();
-          console.log('less');
-          currentSlide--;
-          var $slide = $($slides[currentSlide]);
-          console.log($slide);
-          var vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-          var offsetLeft = $slide.offset().left - vw/20;
-          console.log(offsetLeft);
-          isAnimating = true;
-          $(".containerSlider").animate(
-            {
-              scrollLeft: offsetLeft
-            },
-            1000,
-            stopAnimation
-          );
-        }
-      },
-      { passive: false }
-    );
-  })(jQuery);
-   */
+  });
