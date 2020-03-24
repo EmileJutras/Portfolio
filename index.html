@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="particles-js">
         <div class="header">
             <h1><span class="redText">//</span> Emile Jutras</h1>
                 <span class="menu-trigger">
@@ -32,16 +32,16 @@
             <div class="menu-container">
                 <ul class="menu">
                     <li>
-                        <a href="#" class="link" onclick="currentSlide(1)">Accueil</a>
+                        <a class="link" id="linkAccueil">Accueil</a>
                     </li>
                     <li>
-                        <a href="#" class="link" onclick="currentSlide(2)">À propos</a>
+                        <a class="link" id="linkAPropos">À propos</a>
                     </li>
                     <li>
-                        <a href="#" class="link" onclick="currentSlide(3)">Projets</a>
+                        <a class="link" id="linkProjets">Projets</a>
                     </li>
                     <li>
-                        <a href="#" class="link" onclick="currentSlide(9)">Contact</a>
+                        <a class="link" id="linkContact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -53,10 +53,12 @@
             </button>
             <div class="glider">
                 <div class="section accueil" id="accueil">
-
+                    <h2>Emile Jutras</h2>
+                    <h3>Bienvenue</h3>
                 </div>
                 <div class="section apropos" id="apropos">
-    
+                    <h2><span class="redText">//</span> À propos</h2>
+                    <p>Bonjour, je m'appelle <span class="redText">Emile</span> et je suis un intégrateur multimédia spécialisé en <span class="redText">Jeu Vidéo</span>. Mon rêve est de pouvoir un jour redonner à cette industrie qui m'a permis de devenir qui je suis aujourd'hui.</p>
                 </div>
                 <div class="section projet1" id="projet1">
     
@@ -93,16 +95,57 @@
 </body>
 <script language="JavaScript" type="text/javascript" src="mjs/menu.js" ></script>
 <script type="text/javascript" src="mjs/glider.js"></script>
+<script src="mjs/particles.js"></script>
 <script>
-    new Glider(document.querySelector('.glider'), {
+
+    ///CREATION DES PARTICULES
+    particlesJS.load('particles-js', 'mjs/particlesjs-config.json');
+
+
+
+    ///CREATION DE LOBJET GLIDER
+    var glider = new Glider(document.querySelector('.glider'), {
         slidesToShow: 1,
         draggable: true,
         scrollLock: true,
+        duration: 1.5,
         dots: '#dots',
         arrows: {
             prev: '.glider-prev',
             next: '.glider-next'
-        }
+        },
+        responsive: [
+            {
+                breakpoint: 1025,
+                settings: {
+                    draggable: false,
+                    duration: 1
+                }
+            }
+        ]
     });
+
+
+    ///MENU NAVIGATION
+    var linkAccueil = document.getElementById('linkAccueil');
+    linkAccueil.addEventListener('click', function(){
+        glider.scrollItem(0, true);
+    });
+
+    var linkAPropos = document.getElementById('linkAPropos');
+    linkAPropos.addEventListener('click', function(){
+        glider.scrollItem(1, true);
+    });
+
+    var linkProjets = document.getElementById('linkProjets');
+    linkProjets.addEventListener('click', function(){
+        glider.scrollItem(2, true);
+    });
+
+    var linkContact = document.getElementById('linkContact');
+    linkContact.addEventListener('click', function(){
+        glider.scrollItem(8, true);
+    });
+
 </script>
 </html>

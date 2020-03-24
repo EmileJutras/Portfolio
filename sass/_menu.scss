@@ -1,6 +1,5 @@
 
 body {
-  background-color: $accentRed;
   font-family: 'Source Code Pro', monospace;
   text-align: center;
   height: 100%;
@@ -150,10 +149,11 @@ box-shadow: 0px 9px 13px 0px $black-30;
   }
   
   a {
+    font-size: 1.5em;
     text-decoration: none;
     color: $backgroundBlack;
     display: inline-block;
-    padding: 10px 0;
+    padding: 2vh 0;
     position: relative;
     
     &:hover {
@@ -195,5 +195,31 @@ box-shadow: 0px 9px 13px 0px $black-30;
     top: 29%;
     left: -53%;
     transform: rotate(45deg) scaleY(0) scaleX(3);
+  }
+}
+
+@media(min-width: 1025px){
+
+  .menu-trigger, .close-trigger{
+    display: none;
+  }
+
+  .menu{
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+    margin-top: 9vh;
+    margin-left: 30vw;
+    align-content: center;
+  }
+
+  .menu a{
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding-bottom: 1vh;
   }
 }
