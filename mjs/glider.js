@@ -47,7 +47,8 @@
           duration: 0.5,
           // easeInQuad
           easing: function (x, t, b, c, d) {
-            return c * (t /= d) * t + b
+            if ((t/=d/2) < 1) return c/2*t*t + b;
+	          return -c/2 * ((--t)*(t-2) - 1) + b;
           }
         },
         settings
@@ -424,6 +425,7 @@
           _.ele.scrollLeft +
           (scrollTarget - _.ele.scrollLeft) *
             _.opt.easing(0, now, 0, 1, scrollDuration)
+            console.log(now);
         if (now < scrollDuration && animateIndex === _.animate_id) {
           _window.requestAnimationFrame(animate)
         } else {
