@@ -7,7 +7,7 @@ const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0
 
 if(vw <= 1024){
 
-  var boutonsMenu = document.querySelectorAll('a');
+  var boutonsMenu = document.querySelectorAll('.link');
 
   for (i=0; i<boutonsMenu.length; i++){
     boutonsMenu[i].addEventListener("click", function(){

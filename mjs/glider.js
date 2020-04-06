@@ -264,7 +264,7 @@
       if (_.ele.scrollLeft + _.containerWidth >= Math.floor(_.trackWidth)) {
         _.page = _.dots ? _.dots.children.length - 1 : 0
       }
-  
+
       [].forEach.call(_.slides, function (slide, index) {
         var slideClasses = slide.classList
   
@@ -295,7 +295,7 @@
         }
   
         var isVisible =
-          Math.ceil(itemStart) >= start && Math.floor(itemEnd) <= end
+          Math.ceil(itemStart) >= start && Math.floor(itemEnd) <= end 
         slideClasses.toggle('visible', isVisible)
         if (isVisible !== wasVisible) {
           _.emit('slide-' + (isVisible ? 'visible' : 'hidden'), {
@@ -425,7 +425,6 @@
           _.ele.scrollLeft +
           (scrollTarget - _.ele.scrollLeft) *
             _.opt.easing(0, now, 0, 1, scrollDuration)
-            console.log(now);
         if (now < scrollDuration && animateIndex === _.animate_id) {
           _window.requestAnimationFrame(animate)
         } else {

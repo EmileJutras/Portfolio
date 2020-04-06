@@ -54,7 +54,6 @@
             <div class="glider">
                 <div class="section accueil" id="accueil">
                     <div class="contenuSlide0 accueil">
-                        <h2>Emile Jutras</h2>
                         <h3>Bienvenue</h3>
                     </div>
                 </div>
@@ -70,7 +69,7 @@
                     <div class="contenuSlide2 projet">
                         <h2><span class="redText">//</span> Projets</h2>
                         <h3>Les enfants de la forêt</h3>
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                        <iframe src="https://www.youtube.com/embed/mnIXdw2rwtE">
                         </iframe>
                         <p>Jeu gagnant de la 2e position du GameJam intercollégial de Valleyfield de 2020.
                             Dans ce projet, j'ai fait la programmation des contrôles et des actions des personnages joueurs, la programmation du système
@@ -82,7 +81,7 @@
                     <div class="contenuSlide3 projet">
                         <h2><span class="redText">//</span> Projets</h2>
                         <h3>Over the Hillock</h3>
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                        <iframe src="https://www.youtube.com/embed/tvj8zztYVoU">
                         </iframe>
                         <p>Prototype de jeu réalisé dans le cadre de mon cours de développement de jeu.
                             Dans ce projet, j'ai programmé les déplacements du personnage principal, j'ai modélisé, rig et animé le personnage principal, j'ai créé le Toon Shading, j'ai aidé la programmeuse principale et j'ai composé et intégré l'audio du jeu.</p>
@@ -92,7 +91,7 @@
                     <div class="contenuSlide4 projet">
                         <h2><span class="redText">//</span> Projets</h2>
                         <h3>Over the Hillock Cutscene</h3>
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                        <iframe src="https://www.youtube.com/embed/jAWBqGbFStk">
                         </iframe>
                         <p>Ma première cinématique en 3D faite avec Autodesk Maya. Dans ce projet, j'ai participé au processus d'idéation, j'ai modélisé, riggé et texturé le personnage principal et j'ai animé la majorité du projet.</p>
                         </div>
@@ -100,46 +99,18 @@
                 <div class="section projet4" id="projet4">
                     <div class="contenuSlide5 projet">
                         <h2><span class="redText">//</span> Projets</h2>
-                        <h3>Les enfants de la foret</h3>
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                        </iframe>
-                        <p>Jeu gagnant de la 2e position du GameJam intercollégial de Valleyfield de 2020.
-                            Dans ce projet, j'ai fait la programmation des contrôles et des actions des personnages joueurs, la programmation du système
-                            de choix de personnage, la gestion de l’éclairage et des ressources du joueur et la composition et intégration de l’audio.</p>
-                        </div>
-                </div>
-                <div class="section projet5" id="projet5">
-                    <div class="contenuSlide6 projet">
-                        <h2><span class="redText">//</span> Projets</h2>
-                        <h3>Les enfants de la foret</h3>
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                        </iframe>
-                        <p>Jeu gagnant de la 2e position du GameJam intercollégial de Valleyfield de 2020.
-                            Dans ce projet, j'ai fait la programmation des contrôles et des actions des personnages joueurs, la programmation du système
-                            de choix de personnage, la gestion de l’éclairage et des ressources du joueur et la composition et intégration de l’audio.</p>
-                        </div>
-                </div>
-                <div class="section projet6" id="projet6">
-                    <div class="contenuSlide7 projet">
-                        <h2><span class="redText">//</span> Projets</h2>
-                        <h3>Les enfants de la foret</h3>
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                        </iframe>
-                        <p>Jeu gagnant de la 2e position du GameJam intercollégial de Valleyfield de 2020.
-                            Dans ce projet, j'ai fait la programmation des contrôles et des actions des personnages joueurs, la programmation du système
-                            de choix de personnage, la gestion de l’éclairage et des ressources du joueur et la composition et intégration de l’audio.</p>
+                        <h3>Dark Sun</h3>
+                        <img src="media/darkSun.png" width="90%">
+                        <p>Ma première composition réalisée dans Unreal Engine 4 avec les librairie de mégascans de Quixel.</p>
                         </div>
                 </div>
                 <div class="section contact" id="contact">
-                    <div class="contenuSlide8 projet">
-                        <h2><span class="redText">//</span> Projets</h2>
-                        <h3>Les enfants de la foret</h3>
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                        </iframe>
-                        <p>Jeu gagnant de la 2e position du GameJam intercollégial de Valleyfield de 2020.
-                            Dans ce projet, j'ai fait la programmation des contrôles et des actions des personnages joueurs, la programmation du système
-                            de choix de personnage, la gestion de l’éclairage et des ressources du joueur et la composition et intégration de l’audio.</p>
-                        </div>
+                    <div class="contenuSlide6 contact">
+                        <h2><span class="redText">//</span> Contact</h2>
+                        <a href="https://emilejutras.artstation.com/">ArtStation <span class="redText">//cliquez-moi!!</span></a>
+                        <a href="https://www.linkedin.com/in/emile-jutras-83262b196/">LinkedIn <span class="redText">//cliquez-moi!!</span></a>
+                        <p>Courriel : emilejutras@live.fr</p>    
+                    </div>
                 </div>
             </div>
             
@@ -185,17 +156,37 @@
         ]
     });
 
-    document.querySelector('.glider').addEventListener('glider-slide-visible', function(event){
-        var query = '.contenuSlide' + event.detail.slide;
-        var slide = document.querySelector(query);
-        $(slide).animate({opacity: 1}, 200);
-});
+    var resizing = false;
 
-document.querySelector('.glider').addEventListener('glider-slide-hidden', function(event){
-    var query = '.contenuSlide' + event.detail.slide;
-        var slide = document.querySelector(query);
-        $(slide).animate({opacity: 0}, 200);
-});
+    $(window).resize(function() {
+        resizing = true;
+    if(this.resizeTO) clearTimeout(this.resizeTO);
+    this.resizeTO = setTimeout(function() {
+        $(this).trigger('resizeEnd');
+    }, 500);
+    });
+
+    $(window).bind('resizeEnd', function() {
+        resizing = false;
+    });
+
+    document.querySelector('.glider').addEventListener('glider-slide-visible', function(event){
+        if(resizing == false){
+            var query = '.contenuSlide' + event.detail.slide;
+            var slide = document.querySelector(query);
+            $(slide).animate({opacity: 1}, 200);
+        }
+        
+    });
+
+    document.querySelector('.glider').addEventListener('glider-slide-hidden', function(event){
+        if(resizing == false){
+            var query = '.contenuSlide' + event.detail.slide;
+            var slide = document.querySelector(query);
+            $(slide).animate({opacity: 0}, 200);
+        }
+        
+    });
 
 
     ///MENU NAVIGATION
