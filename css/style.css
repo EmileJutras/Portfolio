@@ -39,6 +39,12 @@ body .redText {
   color: #d21404;
 }
 
+body .info {
+  color: #d21404;
+  font-size: 3.5vw;
+  letter-spacing: 0em;
+}
+
 body .header {
   border: 1px solid white;
   position: absolute;
@@ -130,7 +136,7 @@ body .accueil h2 {
 body .accueil h3 {
   color: white;
   font-weight: 100;
-  font-size: 1.5em;
+  font-size: 5vw;
   letter-spacing: .7em;
   margin-right: -.7em;
 }
@@ -141,8 +147,9 @@ body .apropos {
 
 body .apropos h2 {
   font-size: 8vw;
-  margin-top: 3vh;
-  margin-left: 3vw;
+  margin: 3vh 4vw 1.2vh 4vw;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   font-weight: 100;
 }
 
@@ -233,6 +240,9 @@ body .particles-js-canvas-el {
 }
 
 @media (min-width: 1025px) {
+  body .info {
+    display: none;
+  }
   body .apropos h2 {
     font-size: 3.3em;
     margin-top: 3vh;
@@ -606,6 +616,7 @@ html {
   height: 80vh;
   border: 1px solid white;
   margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .arrow {

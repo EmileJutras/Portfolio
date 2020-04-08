@@ -15,6 +15,12 @@ body {
         color: $accentRed;
     }
 
+    .info{
+        color: $accentRed;
+        font-size: 3.5vw;
+        letter-spacing: 0em;
+    }
+
     .header{
         border: 1px solid white;
         position: absolute;
@@ -88,7 +94,7 @@ body {
         h3{
             color: white;
             font-weight: 100;
-            font-size: 1.5em;
+            font-size: 5vw;
             letter-spacing: .7em;
             margin-right: -.7em;
         }
@@ -99,8 +105,8 @@ body {
 
         h2{
             font-size: 8vw;
-            margin-top: 3vh;
-            margin-left: 3vw;
+            margin: 3vh 4vw 1.2vh 4vw;
+            align-self: flex-start;
             font-weight: 100;
         }
 
@@ -178,6 +184,10 @@ body {
     }
 
     @media(min-width: 1025px){
+
+        .info{
+            display: none;
+        }
 
         .apropos{
             h2{
