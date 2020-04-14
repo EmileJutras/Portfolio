@@ -240,6 +240,9 @@ body .particles-js-canvas-el {
 }
 
 @media (min-width: 1025px) {
+  body .accueil h3 {
+    font-size: 2vw;
+  }
   body .info {
     display: none;
   }
